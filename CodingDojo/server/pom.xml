@@ -16,7 +16,7 @@
         <jackson.version>2.7.5</jackson.version>
         <javax.mail.version>1.4.7</javax.mail.version>
         <org.json.version>20160810</org.json.version>
-        <sqlite-jdbc.version>3.8.11.2</sqlite-jdbc.version>
+        <hsqldb.version>2.4.0</hsqldb.version>
         <postgresql-jdbc.version>9.1-901-1.jdbc4</postgresql-jdbc.version>
         <logback.version>1.1.7</logback.version>
         <commons-collections.version>3.2.2</commons-collections.version>
@@ -99,9 +99,9 @@
             <version>${org.json.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.xerial</groupId>
-            <artifactId>sqlite-jdbc</artifactId>
-            <version>${sqlite-jdbc.version}</version>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>${hsqldb.version}</version>
         </dependency>
         <dependency>
             <groupId>postgresql</groupId>

@@ -26,19 +26,18 @@ package com.codenjoy.dojo.services.jdbc;
 import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.Statement;
 
-public class SqliteConnectionThreadPool extends CrudConnectionThreadPool {
+public class HsqldbConnectionThreadPool extends CrudConnectionThreadPool {
 
     private static final int ONLY_ONE_CONNECTION = 1; // this is sqlite restriction
     private String databaseFile;
 
-    public SqliteConnectionThreadPool(final String databaseFile, String... createTableSqls) {
+    public HsqldbConnectionThreadPool(final String databaseFile, String... createTableSqls) {
         super(ONLY_ONE_CONNECTION, new Get() {
             @Override
             public Connection connection() throws Exception {
-                Class.forName("org.sqlite.JDBC");
-                Connection result = DriverManager.getConnection("jdbc:sqlite:" + createDirs(databaseFile));
+                Class.forName("org.hsqldb.jdbc.JDBCDriver");
+                Connection result = DriverManager.getConnection("jdbc:hsqldb:file:" + createDirs(databaseFile));
                 return result;
             }
         });

@@ -23,10 +23,9 @@ package com.codenjoy.dojo.services.dao;
  */
 
 
-import com.codenjoy.dojo.services.jdbc.SqliteConnectionThreadPoolFactory;
+import com.codenjoy.dojo.services.jdbc.HsqldbConnectionThreadPoolFactory;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Calendar;
@@ -42,7 +41,7 @@ public class PaymentTest {
 
     @Before
     public void setup() {
-        service = new Payment(new SqliteConnectionThreadPoolFactory("target/payment.db" + new Random().nextInt()));
+        service = new Payment(new HsqldbConnectionThreadPoolFactory("target/payment.db" + new Random().nextInt()));
     }
 
     @After

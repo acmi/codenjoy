@@ -25,21 +25,19 @@ package com.codenjoy.dojo.services.jdbc;
 
 import org.junit.Test;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Random;
 
-public class SqliteConnectionThreadPoolTest {
+public class HsqldbConnectionThreadPoolTest {
 
-    private SqliteConnectionThreadPool pool;
+    private HsqldbConnectionThreadPool pool;
 
     @Test
     public void testMultiThreading() throws InterruptedException {
         try {
             String file = "target/pool.db" + new Random().nextInt();
-            pool = new SqliteConnectionThreadPool(file,
+            pool = new HsqldbConnectionThreadPool(file,
                     "CREATE TABLE IF NOT EXISTS users (" +
                             "user varchar(255), " +
                             "password varchar(255));");

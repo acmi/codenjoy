@@ -24,8 +24,7 @@ package com.codenjoy.dojo.services.dao;
 
 
 import com.codenjoy.dojo.services.*;
-import com.codenjoy.dojo.services.dao.ActionLogger;
-import com.codenjoy.dojo.services.jdbc.SqliteConnectionThreadPoolFactory;
+import com.codenjoy.dojo.services.jdbc.HsqldbConnectionThreadPoolFactory;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -42,7 +41,7 @@ public class ActionLoggerTest {
 
     @Before
     public void setup() {
-        logger = new ActionLogger(new SqliteConnectionThreadPoolFactory("target/logs.db" + new Random().nextInt()), 1);
+        logger = new ActionLogger(new HsqldbConnectionThreadPoolFactory("target/logs.db" + new Random().nextInt()), 1);
     }
 
     @After
